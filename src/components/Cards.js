@@ -36,6 +36,10 @@ const InnerContentHolder = styled.div`
   padding-left: 3rem;
   padding-top: ${(props) => props.paddingTop};
   padding-right: ${(props) => props.paddingRight};
+  @media (max-width: 1365px) {
+    padding-right: 2.1rem;
+    padding-left: 2rem;
+  }
 `;
 
 // creating cards inner elements
@@ -59,6 +63,10 @@ const Description = styled.p`
   opacity: 0.8;
   margin: 0;
   padding-right: ${(props) => props.paddingRight};
+  @media (max-width: 1365px) {
+    padding-right: ${(props) =>
+      props.paddingRight ? props.paddingRight : '6rem'};
+  }
 `;
 
 // Positioning image for 2nd card
@@ -66,6 +74,9 @@ const ImgStyled = styled.img`
   position: absolute;
   bottom: 0;
   right: 5.8%;
+  @media (max-width: 1365px) {
+    right: 0;
+  }
 `;
 
 // Creating GET Started button
@@ -110,7 +121,7 @@ const Cards = () => {
       <AwardsStyled>
         <InnerContentHolder paddingTop="2.2rem">
           <Header>Мои награды</Header>
-          <Description paddingRight="37%">
+          <Description paddingRight="6.3rem">
             Краткое описание раздела с наградами ученика
           </Description>
           <Neptune src={neptune} alt="planet" />
@@ -119,9 +130,9 @@ const Cards = () => {
         </InnerContentHolder>
       </AwardsStyled>
       <TrainingStyled>
-        <InnerContentHolder paddingTop="2.3rem">
+        <InnerContentHolder paddingTop="2.3rem" paddingRight="3rem">
           <Header>Абакус</Header>
-          <Description paddingRight="10rem">
+          <Description paddingRight="5.5rem">
             Потренируй свой навык ментальной арифметики
           </Description>
           <Button>Начать</Button>
@@ -131,7 +142,7 @@ const Cards = () => {
       <InvitationStyled>
         <InnerContentHolder paddingTop="2rem" paddingRight="3.5rem">
           <Header>Приведи друга и получите по уроку в подарок</Header>
-          <Description>
+          <Description paddingRight="2rem">
             Узнай, за что ты можешь получить бонусы и ценные призы!
           </Description>
         </InnerContentHolder>
